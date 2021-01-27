@@ -22,8 +22,15 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         }
-      },
-      {
+      }, {
+        test: /\.(scss|css)$/,
+        use: [
+          'style-loader',
+          'css-modules-typescript-loader',
+          'css-loader',
+          'sass-loader'
+        ],
+      }, {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
